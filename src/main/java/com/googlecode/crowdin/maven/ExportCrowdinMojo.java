@@ -3,14 +3,12 @@ package com.googlecode.crowdin.maven;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Mojo;
 
 /**
  * Export crowdin translations in this project, for a fresh translation file
- * 
- * @goal export
- * @aggregator
- * @threadSafe
  */
+@Mojo(name = "export", aggregator = true, threadSafe = true)
 public class ExportCrowdinMojo extends AbstractCrowdinMojo {
 
 	@Override
